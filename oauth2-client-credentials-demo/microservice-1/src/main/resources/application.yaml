@@ -1,0 +1,20 @@
+spring:
+    security:
+        oauth2:
+            client:
+                registration:
+                    oauth2-client-credentials:
+                        client-id: oauth2-client-credentials
+                        client-secret: 037a4803-138f-4603-beec-30b58954873d
+                        redirect-uri: http://localhost:8080/login/oauth2/code/oauth2-client-credentials
+                        provider: keycloak
+                        scope: openid, profile, roles
+                        authorization-grant-type: client_credentials
+                provider:
+                    keycloak:
+                        issuer-uri: http://localhost:8082/auth/realms/oauth2-demo-realm
+            resourceserver:
+                jwt:
+                    issuer-uri: http://localhost:8082/auth/realms/oauth2-demo-realm
+server:
+    port: '8083'

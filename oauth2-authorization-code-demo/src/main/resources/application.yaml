@@ -1,0 +1,17 @@
+server:
+    port: 8081
+spring:
+    security:
+        oauth2:
+            client:
+                provider:
+                    oauth2-demo-thymeleaf-client:
+                        issuer-uri: http://localhost:8082/auth/realms/oauth2-demo-realm
+
+                registration:
+                    oauth2-demo-thymeleaf-client:
+                        authorization-grant-type: authorization_code
+                        client-id: oauth2-demo-thymeleaf-client
+                        client-secret: af464a1f-6b50-4914-b61f-5feea2583857
+                        redirect-uri: http://localhost:8081/login/oauth2/code/oauth2-demo-thymeleaf-client
+                        scope: openid, profile, roles
